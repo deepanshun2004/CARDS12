@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadium Details</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden; 
+        }
+
+        .details-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #stadium-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="details-container">
+        <img id="stadium-image" src="" alt="Stadium Image">
+        <h1 id="stadium-name">Stadium Name</h1>
+        <p id="stadium-location">Location: </p>
+        <p id="stadium-description">Description: </p>
+    </div>
+
+    <script>
+        
+        const stadiumDetails = {
+            "Card 1": {
+                name: "Narendra Modi Stadium",
+                location: "Ahmedabad, Gujarat",
+                description: "The Narendra Modi Stadium, located in Ahmedabad, is the largest cricket stadium in the world with a seating capacity of 132,000 spectators. It is known for hosting numerous international cricket matches, including the final of the 2011 ICC Cricket World Cup.",
+                image: "https://www.zapcricket.com/cdn/shop/articles/WhatsApp_Image_2023-12-22_at_04.33.45.webp?v=1703201463"
+            },
+            "Card 2": {
+                name: "Wankhede Stadium",
+                location: "Mumbai, Maharashtra",
+                description: "Wankhede Stadium is one of the most iconic cricket stadiums in India, located in Mumbai. It has a seating capacity of around 33,000 and is famous for hosting the final of the 2011 ICC Cricket World Cup, where India emerged victorious.",
+                image: "https://content.jdmagicbox.com/v2/comp/mumbai/28/022p690728/catalogue/wankhede-stadium-churchgate-mumbai-stadiums-xuu1151zxw.jpg"
+            },
+            "Card 3": {
+                name: "MCA Stadium",
+                location: "Pune, Maharashtra",
+                description: "Maharashtra Cricket Association (MCA) Stadium in Pune is known for its state-of-the-art facilities and has hosted several international and domestic cricket matches. The stadium has a seating capacity of 37,000.",
+                image: "https://content.jdmagicbox.com/comp/pune/k3/020pxx20.xx20.111222150219.s1k3/catalogue/maharashtra-cricket-association-stadium-dehu-road-pune-stadiums-10sdb3kecv.jpg"
+            },
+            "Card 4": {
+                name: "Eden Gardens",
+                location: "Kolkata, West Bengal",
+                description: "Eden Gardens is one of the oldest and most iconic cricket stadiums in the world. Located in Kolkata, it is often referred to as the 'Mecca of Indian cricket' and has a seating capacity of 66,000.",
+                image: "https://www.iplt20.com/assets/images/stadiumimage/eden-garden-small-new.jpg"
+            },
+            "Card 5": {
+                name: "Rajiv Gandhi Stadium",
+                location: "Hyderabad, Telangana",
+                description: "Rajiv Gandhi International Cricket Stadium, located in Hyderabad, is known for its large seating capacity of 55,000. It has hosted numerous international matches and is the home ground of the Sunrisers Hyderabad IPL team.",
+                image: "https://www.fabhotels.com/blog/assets/2023/08/600X400-9.jpg"
+            },
+            "Card 6": {
+                name: "Arun Jaitley Stadium",
+                location: "New Delhi",
+                description: "Arun Jaitley Stadium, formerly known as Feroz Shah Kotla Stadium, is one of the oldest cricket stadiums in India. Located in New Delhi, it has a seating capacity of 41,820 and has witnessed many historic moments in Indian cricket.",
+                image: "https://crictoday.com/wp-content/uploads/2023/10/Arun-Jaitley-Stadium-1.jpg"
+            },
+            "Card 7": {
+                name: "M. A. Chidambaram Stadium",
+                location: "Chennai, Tamil Nadu",
+                description: "M. A. Chidambaram Stadium, also known as Chepauk Stadium, is located in Chennai and is one of the oldest cricket stadiums in India. It has a seating capacity of 50,000 and is famous for its passionate cricket fans.",
+                image: "https://upload.wikimedia.org/wikipedia/commons/a/a2/MA_Chidambaram_Stadium_In_the_Night_during_a_CSK_Game.jpg"
+            },
+            "Card 8": {
+                name: "M. Chinnaswamy Stadium",
+                location: "Bengaluru, Karnataka",
+                description: "M. Chinnaswamy Stadium is a famous cricket stadium located in Bengaluru. It has a seating capacity of 40,000 and is known for its electrifying atmosphere during IPL matches, being the home ground of the Royal Challengers Bangalore.",
+                image: "https://www.royalchallengers.com/PRRCB01/public/styles/1061x767_landscape/public/2020-03/chinnaswamystadium_1.jpg?h=08b25f12&itok=hamzv-PF"
+            },
+            "Card 9": {
+                name: "HPCA Stadium",
+                location: "Dharamshala, Himachal Pradesh",
+                description: "HPCA Stadium in Dharamshala is one of the most scenic cricket stadiums in the world, with a backdrop of the Himalayan mountains. It has a seating capacity of 23,000 and is known for its picturesque setting.",
+                image: "https://media.hpcricket.org//images/photo/hpca_tadium.jpg"
+            },
+            "Card 10": {
+                name: "New PCA Stadium",
+                location: "Mullanpur, Punjab",
+                description: "The New PCA Stadium in Mullanpur, Punjab, is a modern cricket stadium with a seating capacity of 38,000. It has been developed to host international cricket matches and other major sporting events.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAHK3UWAas-udAUf_uxnpV5pPKlDC8-AKwksGLlVRsfc8Wj8lpq8vdfMKwKmhg-j-4ZKo&usqp=CAU"
+            },
+            "Card 11": {
+                name: "Ekana Stadium",
+                location: "Lucknow, Uttar Pradesh",
+                description: "Ekana Cricket Stadium, also known as Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, is located in Lucknow. It has a seating capacity of 50,000 and is one of the newest cricket stadiums in India.",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX_TWjAo3IRJw56QyBn6Zxglfd7VDROv-W0Q&s"
+            },
+            "Card 12": {
+                name: "SCA Stadium",
+                location: "Rajkot, Gujarat",
+                description: "Saurashtra Cricket Association (SCA) Stadium in Rajkot, Gujarat, is known for its high-scoring matches. It has a seating capacity of 28,000 and is a popular venue for both international and domestic cricket matches.",
+                image: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_wide_w_640,q_50/lsci/db/PICTURES/CMS/152900/152967.jpg"
+            }
+        };
+
+       
+        const urlParams = new URLSearchParams(window.location.search);
+        const cardTitle = urlParams.get('card');
+
+        
+        if (stadiumDetails[cardTitle]) {
+            const stadium = stadiumDetails[cardTitle];
+            document.getElementById('stadium-name').textContent = stadium.name;
+            document.getElementById('stadium-location').textContent = `Location: ${stadium.location}`;
+            document.getElementById('stadium-description').textContent = stadium.description;
+            document.getElementById('stadium-image').src = stadium.image;
+            document.getElementById('stadium-image').alt = stadium.name;
+        } else {
+            document.getElementById('stadium-name').textContent = "Stadium Not Found";
+            document.getElementById('stadium-location').textContent = "";
+            document.getElementById('stadium-description').textContent = "The details for the selected stadium are not available.";
+            document.getElementById('stadium-image').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
